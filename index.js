@@ -1,4 +1,3 @@
-//Feature #1 ( In your project, display the current date and time using JavaScript: Tuesday 16:00)
 function formatDate() {
   let days = [
     "Sunday",
@@ -32,12 +31,6 @@ function formatDate() {
   let year = now.getFullYear();
   return `${day} ${hours}:${minutes}, ${month} ${currentDate}, ${year}`;
 }
-let element = document.querySelector("#current-date");
-let now = new Date();
-element.innerHTML = formatDate(now);
-
-//Feature #2 (Add a search engine, when searching for a city (i.e. Paris),
-//            display the city name on the page after the user submits the form.)
 
 function showWeather(response) {
   let currentSity = document.querySelector("#current-city");
@@ -55,7 +48,7 @@ function searchCity(city) {
 }
 function submitSity(event) {
   event.preventDefault();
-  let city = document.querySelector("#input-sity").value;
+  let city = document.querySelector("#city-input").value;
   searchCity(city);
 }
 function searchLocation(position) {
@@ -68,11 +61,18 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-let form = document.querySelector("#button-addon1");
-form.addEventListener("click", submitSity);
-let currentLocationButton = document.querySelector("#current-location");
-currentLocationButton.addEventListener("click", getCurrentLocation);
 
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", submitSity);
+let searchForm2 = document.querySelector("#button-addon1");
+
+searchForm2.addEventListener("click", submitSity);
+let currentLocationButton = document.querySelector("#current-location");
+
+currentLocationButton.addEventListener("click", getCurrentLocation);
+let element = document.querySelector("#current-date");
+let now = new Date();
+element.innerHTML = formatDate(now);
 //Feature change Celsius to Fahrenheit
 function changeCelsius(event) {
   event.preventDefault();

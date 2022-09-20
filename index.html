@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +17,7 @@
       src="https://kit.fontawesome.com/fe7ccf33a0.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
     <div class="container">
@@ -26,7 +25,7 @@
         <img src="./imeges/cloud.jpg" class="card-img" alt="cloudy" />
         <div class="card" style="width: 13rem">
             <div class="card-body">
-            <h5 class="card-title" ><span id="current-city">Kyiv</span>
+            <h5 class="card-title" ><span id="current-city"></span>
                - <span id="temperature"></span>
                <span class="units"> 
                 <a href="celsius" id="c-link">℃</a>|
@@ -41,20 +40,22 @@
         </div><button type="button" class="btn btn-light location-btn" id="current-location">Current Location</button>
       </div>
       <div class="five-day-wether">
-        <div class="input-group mb-3">
+        <form class="search-form" id="search-form">
+              
+         <div class="input-group mb-3">
           <button class="btn btn-outline-primary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass-location"></i
           ></button>
           
           <input
-            type="text"
+            type="search"
             class="form-control"
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-default"
             placeholder="Enter sity"
-            id="input-sity"
+            id="city-input"
           />
-        </div>
-       
+          </div>
+      </form>
         <div class="card weekdays" style="width: 18rem">
           <table class="weekday">
             <tr>
@@ -88,100 +89,6 @@
         </div>
       </div>
     </div>
-    <script src="./index.js"></script>
+   
   </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>Weather</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/fe7ccf33a0.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="my-sity">
-        <img src="./imeges/cloud.jpg" class="card-img" alt="cloudy" />
-        <div class="card" style="width: 13rem">
-            <div class="card-body">
-            <h5 class="card-title" ><span id="current-city">Kyiv</span>
-               - <span id="temperature"></span>
-               <span class="units"> 
-                <a href="celsius" id="c-link">℃</a>|
-                <a href="fahrenhait" id="f-link">℉</a>
-              </span>  </h5>
-            <div class="card-text">
-              <small id="description"></small>  <br/>
-              Today - <span id="current-date"></span>
-              
-            </div>
-          </div>
-        </div><button type="button" class="btn btn-light location-btn" id="current-location">Current Location</button>
-      </div>
-      <div class="five-day-wether">
-        <div class="input-group mb-3">
-          <button class="btn btn-outline-primary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass-location"></i
-          ></button>
-          
-          <input
-            type="text"
-            class="form-control"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default"
-            placeholder="Enter sity"
-            id="input-sity"
-          />
-        </div>
-       
-        <div class="card weekdays" style="width: 18rem">
-          <table class="weekday">
-            <tr>
-              <td class="day">Saturday</td>
-              <td class="sky">Partly cloudy
-              <br/>26°	<strong>18°</strong></td>
-              <td class="emoji">⛅</td>
-            </tr> 
-            <tr>
-              <td class="day">Sunday</td>
-              <td class="sky">Showers in places<br/> 26°<strong>17°</strong></td>
-              <td class="emoji">🌦️</td>
-            </tr> 
-            <tr>
-              <td class="day">Monday</td> 				 	
-              <td class="sky">Sunny <br/>28°	<strong>17°</strong></td>
-              <td class="emoji">🌞</td>
-            </tr> 
-            <tr>
-              <td class="day">Tuesday</td>
-              <td class="sky">Mostly sunny<br/>29°	<strong>18°</strong></td>
-              <td class="emoji">🌤️</td>
-            </tr> 
-            <tr>
-              <td class="day">Wednesday</td>
-              <td class="sky">Partly cloudy <br/>31°	<strong>18°</strong></td>
-              <td class="emoji">⛅</td>
-            </tr> 
-          </table>
-        </div>
-        </div>
-      </div>
-    </div>
-    <script src="./index.js"></script>
-  </body>
-</html>
->>>>>>> Stashed changes
