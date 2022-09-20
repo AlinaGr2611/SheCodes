@@ -40,3 +40,7 @@ small {
   font-size: 0.7em;
   border-color: rgba(0, 0, 0, 0.175);
 }
+.source-code {
+  display: block;
+  text-align: center;
+}
