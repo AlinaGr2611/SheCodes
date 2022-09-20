@@ -1,5 +1,4 @@
 //Feature #1 ( In your project, display the current date and time using JavaScript: Tuesday 16:00)
-
 function formatDate() {
   let days = [
     "Sunday",
