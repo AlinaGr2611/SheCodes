@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .container {
   width: fit-content;
   display: flex;
@@ -40,3 +41,47 @@ small {
   font-size: 0.7em;
   border-color: rgba(0, 0, 0, 0.175);
 }
+=======
+.container {
+  width: fit-content;
+  display: flex;
+  margin: 20px auto;
+  background-color: #ebf3fb;
+  font: PT Mono;
+  padding: 20px;
+}
+li {
+  list-style: none;
+}
+.input-group,
+.weekdays {
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.serch-btn {
+  background-color: #fff;
+}
+.day {
+  font-size: 0.7em;
+  padding: 10px;
+}
+small {
+  font-size: 0.7em;
+}
+.sky {
+  font-size: 0.6em;
+  padding: 10px;
+}
+.card-img {
+  border-radius: 50%;
+  width: 10em;
+  display: block;
+  margin: 10px auto;
+}
+.location-btn {
+  display: block;
+  margin: 10px auto;
+  font-size: 0.7em;
+  border-color: rgba(0, 0, 0, 0.175);
+}
+>>>>>>> Stashed changes
