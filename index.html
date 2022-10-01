@@ -23,21 +23,39 @@
     <div class="container">
       <div class="my-sity">
         <img src="./imeges/cloud.jpg" class="card-img" alt="cloudy" />
-        <div class="card" style="width: 13rem">
-            <div class="card-body">
-            <h5 class="card-title" ><span id="current-city"></span>
-               - <span id="temperature"></span>
-               <span class="units"> 
-                <a href="celsius" id="c-link">℃</a>|
-                <a href="fahrenhait" id="f-link">℉</a>
-              </span>  </h5>
+        <div class="card">
+          <div class="card-body">
+             <div class="card-title" > <h5 id="current-city"> </h5>
+                <div class="row">
+                <div class="col">            
+                   <div class="temp-1">
+                    <span class="big-temp" id="temperature"></span>
+                    <span class="units"> 
+                    <a href="celsius" id="c-link">℃</a>|
+                    <a href="fahrenhait" id="f-link">℉</a>
+                    </span> 
+                     
+                    </div>
+                    
+                <div class="col" >
+                   <ul>
+                    <li id="description"></li>
+                    <li>Wind: <span id="wind" ></span>km/h</li>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>Chance of rain: <span id="rain" ></span></li>
+                 </ul>
+                </div>
+                </div>
+              </div>
+            </div>
             <div class="card-text">
-              <small id="description"></small>  <br/>
-              Today - <span id="current-date"></span>
+              
+              Today  <span id="current-date"></span>
               
             </div>
           </div>
-        </div><button type="button" class="btn btn-light location-btn" id="current-location">Current Location</button>
+        </div>
+        <button type="button" class="btn btn-light location-btn" id="current-location">Current Location</button>
       </div>
       <div class="five-day-wether">
         <form class="search-form" id="search-form">

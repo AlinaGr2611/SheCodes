@@ -39,6 +39,10 @@ function showWeather(response) {
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 function searchCity(city) {
   let apiKey = "83ae76490ea870881878c9f9a41581ff";
@@ -61,6 +65,16 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+function changeCelsius(event) {
+  event.preventDefault();
+  let temperatureC = document.querySelector("#temperature");
+  temperatureC.innerHTML = 20;
+}
+function changeFahrenheit(event) {
+  event.preventDefault();
+  let temperatureF = document.querySelector("#temperature");
+  temperatureF.innerHTML = 20 * 1.8 + 32;
+}
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitSity);
@@ -74,16 +88,6 @@ let element = document.querySelector("#current-date");
 let now = new Date();
 element.innerHTML = formatDate(now);
 //Feature change Celsius to Fahrenheit
-function changeCelsius(event) {
-  event.preventDefault();
-  let temperatureC = document.querySelector("#temperature");
-  temperatureC.innerHTML = 20;
-}
-function changeFahrenheit(event) {
-  event.preventDefault();
-  let temperatureF = document.querySelector("#temperature");
-  temperatureF.innerHTML = 20 * 1.8 + 32;
-}
 
 let celsius = document.querySelector("#c-link");
 celsius.addEventListener("click", changeCelsius);

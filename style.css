@@ -5,6 +5,7 @@
   background-color: #ebf3fb;
   font: PT Mono;
   padding: 20px;
+  border-radius: 10px;
 }
 li {
   list-style: none;
@@ -43,4 +44,12 @@ small {
 .source-code {
   display: block;
   text-align: center;
+}
+.units {
+  font-size: 14px;
+  position: relative;
+  top: -12px;
+}
+.big-temp {
+  font-size: 30px;
 }
