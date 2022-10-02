@@ -88,11 +88,15 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 function changeCelsius(event) {
   event.preventDefault();
   let temperatureC = document.querySelector("#temperature");
+  celsius.classList.add("activ");
+  fahrenheit.classList.remove("activ");
   temperatureC.innerHTML = Math.round(celsiusTemp);
 }
 function changeFahrenheit(event) {
   event.preventDefault();
   let temperatureF = document.querySelector("#temperature");
+  celsius.classList.remove("activ");
+  fahrenheit.classList.add("activ");
   temperatureF.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
 }
 

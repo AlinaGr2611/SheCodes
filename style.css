@@ -40,3 +40,13 @@ small {
   font-size: 0.7em;
   border-color: rgba(0, 0, 0, 0.175);
 }
+a {
+  text-decoration: none;
+}
+.activ {
+  color: black;
+  cursor: default;
+}
+.activ:hover {
+  color: black;
+}
