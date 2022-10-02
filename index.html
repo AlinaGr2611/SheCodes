@@ -17,15 +17,15 @@
       src="https://kit.fontawesome.com/fe7ccf33a0.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="container">
       <div class="my-sity">
-        <img src="./imeges/cloud.jpg" class="card-img" alt="cloudy" />
-        <div class="card">
-          <div class="card-body">
-             <div class="card-title" > <h5 id="current-city"> </h5>
+        <img src="./imeges/cloud.jpg" class="card-img" alt="cloudy" id="icon"/>
+        <div class="card" style="width: 13rem">
+            <div class="card-body">
+              <div class="card-title" > <h5 id="current-city"> </h5>
                 <div class="row">
                 <div class="col">            
                    <div class="temp-1">
@@ -42,44 +42,40 @@
                     <li id="description"></li>
                     <li>Wind: <span id="wind" ></span>km/h</li>
                     <li>Humidity: <span id="humidity"></span>%</li>
-                    <li>Chance of rain: <span id="rain" ></span></li>
-                 </ul>
+                    </ul>
                 </div>
                 </div>
               </div>
             </div>
             <div class="card-text">
-              
-              Today  <span id="current-date"></span>
+              <small id="description"></small>  <br/>
+              Today - <span id="current-date"></span>
               
             </div>
           </div>
-        </div>
-        <button type="button" class="btn btn-light location-btn" id="current-location">Current Location</button>
+        </div><button type="button" class="btn btn-light location-btn" id="current-location">Current Location</button>
       </div>
       <div class="five-day-wether">
-        <form class="search-form" id="search-form">
-              
-         <div class="input-group mb-3">
+        <div class="input-group mb-3">
           <button class="btn btn-outline-primary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass-location"></i
           ></button>
           
           <input
-            type="search"
+            type="text"
             class="form-control"
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-default"
             placeholder="Enter sity"
-            id="city-input"
+            id="input-sity"
           />
-          </div>
-        </form>
+        </div>
+       
         <div class="card weekdays" style="width: 18rem">
           <table class="weekday">
             <tr>
               <td class="day">Saturday</td>
               <td class="sky">Partly cloudy
-              <br/>26°	<strong>18°</strong></td>
+              <br/><span id="forcast-temp=1">26°</span> 	<strong>18°</strong></td>
               <td class="emoji">⛅</td>
             </tr> 
             <tr>
@@ -106,9 +102,7 @@
         </div>
         </div>
       </div>
-      <div class="source-code"><a href="https://github.com/AlinaGr2611/SheCodes">Open-source code </a>, by Alina Hryshchenko</div>
     </div>
-    
     <script src="./index.js"></script>
   </body>
 </html>
