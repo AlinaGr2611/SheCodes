@@ -21,13 +21,7 @@ li {
   font-size: 0.7em;
   padding: 10px;
 }
-small {
-  font-size: 0.7em;
-}
-.sky {
-  font-size: 0.6em;
-  padding: 10px;
-}
+
 .card-img {
   border-radius: 50%;
   width: 7em;
@@ -56,4 +50,10 @@ a {
   display: block;
   text-align: center;
   margin: 10 auto;
+}
+.big-temp {
+  font-size: 40px;
+}
+.sity-name {
+  font-size: 30px;
 }
