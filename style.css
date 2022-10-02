@@ -33,6 +33,7 @@ small {
   width: 7em;
   display: block;
   margin: 10px auto;
+  background: #fff;
 }
 .location-btn {
   display: block;
@@ -49,4 +50,10 @@ a {
 }
 .activ:hover {
   color: black;
+}
+.open-sourced {
+  font-size: small;
+  display: block;
+  text-align: center;
+  margin: 10 auto;
 }
