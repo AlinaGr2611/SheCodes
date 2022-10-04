@@ -79,8 +79,12 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 let celsiusTemp = null;
-let form = document.querySelector("#button-addon1");
-form.addEventListener("click", submitSity);
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitSity);
+let form2 = document.querySelector("#button-addon1");
+form2.addEventListener("click", submitSity);
+
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
