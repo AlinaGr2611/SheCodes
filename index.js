@@ -31,9 +31,34 @@ function formatDate() {
   let year = now.getFullYear();
   return `${day} ${hours}:${minutes}, ${month} ${currentDate}, ${year}`;
 }
-let element = document.querySelector("#current-date");
-let now = new Date();
-element.innerHTML = formatDate(now);
+function displayForekast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecasthtml = `<table >`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  days.forEach(function (day) {
+    forecasthtml =
+      forecasthtml +
+      `<tr>
+    <td class="day">${day}</td>
+    <td class="sky">
+      Partly cloudy <br /><span id="forcast-temp=1">26°</span>
+      <strong>18°</strong>
+    </td>
+    <td class="emoji">⛅</td>
+  </tr>`;
+  });
+
+  forecasthtml = forecasthtml + `</table>`;
+  forecastElement.innerHTML = forecasthtml;
+}
 
 function showWeather(response) {
   let currentSity = document.querySelector("#current-city");
@@ -78,16 +103,6 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-let celsiusTemp = null;
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", submitSity);
-let form2 = document.querySelector("#button-addon1");
-form2.addEventListener("click", submitSity);
-
-let currentLocationButton = document.querySelector("#current-location");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-
 //Feature change Celsius to Fahrenheit
 function changeCelsius(event) {
   event.preventDefault();
@@ -103,10 +118,20 @@ function changeFahrenheit(event) {
   fahrenheit.classList.add("activ");
   temperatureF.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
 }
-
+let element = document.querySelector("#current-date");
+let now = new Date();
+element.innerHTML = formatDate(now);
+let celsiusTemp = null;
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitSity);
+let form2 = document.querySelector("#button-addon1");
+form2.addEventListener("click", submitSity);
+let currentLocationButton = document.querySelector("#current-location");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 let celsius = document.querySelector("#c-link");
 celsius.addEventListener("click", changeCelsius);
 let fahrenheit = document.querySelector("#f-link");
 fahrenheit.addEventListener("click", changeFahrenheit);
-//
+
 searchCity("Kyiv");
+displayForekast();

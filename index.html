@@ -19,8 +19,10 @@
     ></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
     <div class="container">
+      <!--city weather-->
       <div class="my-sity">
         <img src="./imeges/cloud.jpg" class="card-img" alt="cloudy" id="icon"/>
         <div class="card" style="width: 13rem">
@@ -53,9 +55,12 @@
               
             </div>
           </div>
-        </div><button type="button" class="btn btn-light location-btn" id="current-location">Current Location</button>
+        </div>
+        <!--Current Location-->
+        <button type="button" class="btn btn-light location-btn" id="current-location">Current Location</button>
       </div>
       <div class="five-day-wether">
+        <!--input sity group-->
         <form class="search-form" id="search-form">
           <div class="input-group mb-3">
           <button class="btn btn-outline-primary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass-location"></i
@@ -72,8 +77,17 @@
         </div>
       </form>
        
-        </div>
-      </div>      
+            
+      <!--Forecast-->
+     
+      <div class="card weekdays" style="width: 18rem">
+        <div class="weather-forecast" id="forecast">
+          
+      </div>
+    </div>
+    </div>
+      </div>  
+      <!--coded by-->
       <div class="open-sourced"> This project was coded by <a href="">Alina Hryshchenko</a>  and is <a href="https://github.com/AlinaGr2611/SheCodes">open-sourced on GitHub</a>  and <a href="https://incomparable-fairy-c68d86.netlify.app/">hosted on Netlify</a>  
       </div>
     </div>
