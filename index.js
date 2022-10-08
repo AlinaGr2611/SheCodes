@@ -31,10 +31,9 @@ function formatDate() {
   let year = now.getFullYear();
   return `${day} ${hours}:${minutes}, ${month} ${currentDate}, ${year}`;
 }
-function displayForekast(response) {
-  console.log(response.data);
-  let forecastElement = document.querySelector("#forecast");
-  let forecasthtml = `<table >`;
+function formatDay(timesTemp) {
+  let date = new Date(timesTemp * 1000);
+  let day = date.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -44,28 +43,53 @@ function displayForekast(response) {
     "Friday",
     "Saturday",
   ];
-  days.forEach(function (day) {
-    forecasthtml =
-      forecasthtml +
-      `<tr>
-    <td class="day">${day}</td>
+  return days[day];
+}
+function displayForekast(response) {
+  console.log(response.data);
+  let forecast = response.data.list;
+
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHtml = `<table >`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `<tr>
+    <td class="day">${formatDay(forecastDay.dt)}</td>
     <td class="sky">
-      Partly cloudy <br /><span id="forcast-temp=1">26°</span>
-      <strong>18°</strong>
+    ${
+      forecastDay.weather[0].description
+    } <br /><span id="forcast-temp=1">${Math.round(
+          forecastDay.main.temp_max
+        )}°</span>
+      <strong>${Math.round(forecastDay.main.temp_min)}°</strong>
     </td>
-    <td class="emoji">⛅</td>
+    <td > <img class="emoji"src= "http://openweathermap.org/img/wn/${
+      forecastDay.weather[0].icon
+    }@2x.png"/>
+    </td>
   </tr>`;
+    }
   });
 
-  forecasthtml = forecasthtml + `</table>`;
-  forecastElement.innerHTML = forecasthtml;
+  forecastHtml = forecastHtml + `</table>`;
+  forecastElement.innerHTML = forecastHtml;
 }
 
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "83ae76490ea870881878c9f9a41581ff";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt=5&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForekast);
 }
 function showWeather(response) {
