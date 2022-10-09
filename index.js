@@ -46,8 +46,8 @@ function formatDay(timesTemp) {
   return days[day];
 }
 function displayForekast(response) {
-  console.log(response.data);
-  let forecast = response.data.list;
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
   let forecastHtml = `<table >`;
@@ -61,7 +61,7 @@ function displayForekast(response) {
     "Saturday",
   ];
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 7) {
       forecastHtml =
         forecastHtml +
         `<tr>
@@ -69,10 +69,10 @@ function displayForekast(response) {
     <td class="sky">
     ${
       forecastDay.weather[0].description
-    } <br /><span id="forcast-temp=1">${Math.round(
-          forecastDay.main.temp_max
+    } <br /><span class="unitsF" id="forcast-temp=1">${Math.round(
+          forecastDay.temp.max
         )}°</span>
-      <strong>${Math.round(forecastDay.main.temp_min)}°</strong>
+      <strong class="unitsF">${Math.round(forecastDay.temp.min)}°</strong>
     </td>
     <td > <img class="emoji"src= "http://openweathermap.org/img/wn/${
       forecastDay.weather[0].icon
@@ -88,8 +88,8 @@ function displayForekast(response) {
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "83ae76490ea870881878c9f9a41581ff";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "5863935ee9cca4c02ed68203f807c65b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForekast);
 }
 function showWeather(response) {
