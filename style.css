@@ -26,25 +26,30 @@ li {
   background-color: #fff;
 }
 .day {
-  font-size: 1em;
+  font-size: 0.9em;
   padding: 10px;
+}
+.sky {
+  font-size: 0.7em;
 }
 
 .card-img {
   border-radius: 50%;
-  width: 7em;
+  width: 10em;
   display: block;
   margin: 20px auto;
-  background: #fff;
+  background-color: #beddfc;
 }
 .card-body {
   display: flexbox;
 }
+
 .location-btn {
   display: block;
   margin: 10px auto;
-  font-size: 0.7em;
+  font-size: 1em;
   border-color: rgba(0, 0, 0, 0.175);
+  background-color: #beddfc;
 }
 a {
   text-decoration: none;
@@ -68,4 +73,11 @@ a {
 }
 .emoji {
   width: 4em;
+}
+.weekdays {
+  background-color: #beddfc;
+}
+.weather-forecast {
+  box-sizing: border-box;
+  width: 30em;
 }
