@@ -137,21 +137,7 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-//Feature change Celsius to Fahrenheit
-function changeCelsius(event) {
-  event.preventDefault();
-  let temperatureC = document.querySelector("#temperature");
-  celsius.classList.add("activ");
-  fahrenheit.classList.remove("activ");
-  temperatureC.innerHTML = Math.round(celsiusTemp);
-}
-function changeFahrenheit(event) {
-  event.preventDefault();
-  let temperatureF = document.querySelector("#temperature");
-  celsius.classList.remove("activ");
-  fahrenheit.classList.add("activ");
-  temperatureF.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
-}
+
 let element = document.querySelector("#current-date");
 let now = new Date();
 element.innerHTML = formatDate(now);
@@ -162,9 +148,5 @@ let form2 = document.querySelector("#button-addon1");
 form2.addEventListener("click", submitSity);
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-let celsius = document.querySelector("#c-link");
-celsius.addEventListener("click", changeCelsius);
-let fahrenheit = document.querySelector("#f-link");
-fahrenheit.addEventListener("click", changeFahrenheit);
 
 searchCity("Kyiv");

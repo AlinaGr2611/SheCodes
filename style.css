@@ -9,6 +9,14 @@
 li {
   list-style: none;
 }
+.units {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 36px;
+  line-height: 1;
+  position: relative;
+  top: -10px;
+}
 .input-group,
 .weekdays {
   margin-left: 20px;
@@ -29,6 +37,9 @@ li {
   margin: 10px auto;
   background: #fff;
 }
+.card-body {
+  display: flexbox;
+}
 .location-btn {
   display: block;
   margin: 10px auto;
@@ -38,25 +49,18 @@ li {
 a {
   text-decoration: none;
 }
-.activ {
-  color: black;
-  cursor: default;
-}
-.activ:hover {
-  color: black;
-}
+
 .open-sourced {
   font-size: small;
   display: block;
   text-align: center;
   margin: 10 auto;
 }
-.big-temp {
+.big-temp,
+.sity-name {
   font-size: 26px;
 }
-.sity-name {
-  font-size: 30px;
-}
+
 .emoji {
   width: 4em;
 }

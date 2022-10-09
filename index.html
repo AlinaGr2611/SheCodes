@@ -24,36 +24,26 @@
     <div class="container">
       <!--city weather-->
       <div class="my-sity">
-        <img src="./imeges/cloud.jpg" class="card-img" alt="cloudy" id="icon"/>
-        <div class="card" style="width: 13rem">
-            <div class="card-body">
-              <div class="card-title" > <h5 class="sity-name" id="current-city"> </h5>
-                <div class="row">
-                <div class="col">            
-                   <div class="temp-1">
+        <!--icon weather-->
+        <img src="" class="card-img" alt="cloudy" id="icon"/>
+       <!--weather in my sity-->
+        <div class="card" style="width: 15rem">
+          <div class="card-body">
+                    <span class="sity-name" id="current-city"></span> 
+                    <span class="sity-name"> - </span>
                     <span class="big-temp" id="temperature"></span>
-                    <span class="units"> 
-                    <a href="celsius" id="c-link" class="activ">℃</a>|
-                    <a href="fahrenhait" id="f-link">℉</a>
-                    </span> 
-                     
-                    </div>
-                    
-                <div class="col" >
-                   <ul>
+                    <span class="units">℃ </span> 
+                    <ul>
                     <li id="description"></li>
                     <li>Wind: <span id="wind" ></span>m/s</li>
                     <li>Humidity: <span id="humidity"></span>%</li>
                     </ul>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-text">
-              <span id="description"></span>  <br/>
-              Today - <span id="current-date"></span>
-              
-            </div>
+                 
+              <div class="card-text">
+                <span id="description"></span>  
+                <br/>
+                Today - <span id="current-date"></span>
+              </div>  
           </div>
         </div>
         <!--Current Location-->
